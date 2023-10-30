@@ -4,7 +4,7 @@
 //"Aprovado", para médias acima de 6.0
 
 double nota1, nota2, nota3, nota4, media;
-
+string resultado;
 
 Console.WriteLine("--- Média ---\n");
 
@@ -24,34 +24,31 @@ nota4 = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine();
 
-
 if (nota1 < 0 || nota1 > 10
  || nota2 < 0 || nota2 > 10
  || nota3 < 0 || nota3 > 10
  || nota4 < 0 || nota4 > 10)
 {
-    Console.WriteLine("Digite a seguir somente notas entre 0 e 10.");     
+    Console.WriteLine("Digite somente notas entre 0 e 10.");
 }
-
 else
 {
     media = (nota1 + nota2 + nota3 + nota4) / 4;
- 
+
     if (media < 5)
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Reprovado");
+        resultado = "Reprovado(a)";
     }
     else if (media > 6)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Aprovado");
+        resultado = "Aprovado(a)";
     }
     else
     {
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("Em recuperação");
+        resultado = "Em recuperação";
     }
-}
 
-        Console.ResetColor();
+    Console.ResetColor();
+    
+    Console.WriteLine($"Você ficou com média {media:N1}. Resultado: {resultado}");
+}
