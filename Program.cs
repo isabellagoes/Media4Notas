@@ -4,7 +4,6 @@
 //"Aprovado", para médias acima de 6.0
 
 double nota1, nota2, nota3, nota4, media;
-string resultado;
 
 Console.WriteLine("--- Média ---\n");
 
@@ -37,18 +36,23 @@ else
 
     if (media < 5)
     {
-        resultado = "Reprovado(a)";
+        Console.Write($"Você ficou com média {media:N1}. Resultado = ");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Reprovado(a)");
     }
     else if (media > 6)
     {
-        resultado = "Aprovado(a)";
+        Console.Write($"Você ficou com média {media:N1}. Resultado = ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Aprovado(a)");
     }
     else
     {
-        resultado = "Em recuperação";
+        Console.Write($"Você ficou com média {media:N1}. Resultado = ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Em recuperação");
     }
 
     Console.ResetColor();
-    
-    Console.WriteLine($"Você ficou com média {media:N1}. Resultado: {resultado}");
+
 }
